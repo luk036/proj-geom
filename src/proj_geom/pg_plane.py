@@ -1,8 +1,8 @@
 """This module contains functions that are common to projective plane."""
 
-from typing import List, Sequence
-from typing import Generic, TypeVar
 from abc import abstractmethod
+from typing import Generic, List, Sequence, TypeVar
+
 from typing_extensions import Self
 
 Dual = TypeVar("Dual", bound="ProjectivePlane")
@@ -24,7 +24,7 @@ class ProjectivePlane(Generic[Dual, Measure]):
     def __eq__(self, rhs) -> bool:
         """
         The above function is an abstract method that defines the equality comparison for a class.
-        
+
         :param rhs: The parameter "rhs" stands for "right-hand side" and represents the object that is
         being compared to the current object
         """
@@ -33,7 +33,7 @@ class ProjectivePlane(Generic[Dual, Measure]):
     def circ(self, rhs: Self) -> Dual:
         """
         The function circ takes two arguments, self and rhs, and returns a Dual object.
-        
+
         :param rhs: The parameter "rhs" stands for "right-hand side" and it is of type "Self"
         :type rhs: Self
         """
@@ -48,7 +48,7 @@ class ProjectivePlane(Generic[Dual, Measure]):
     def dot(self, line_l: Dual) -> Measure:
         """
         The dot function takes in a Dual object and returns a Measure object.
-        
+
         :param line_l: The parameter "line_l" is of type Dual
         :type line_l: Dual
         """
@@ -57,7 +57,7 @@ class ProjectivePlane(Generic[Dual, Measure]):
     def plucker(self, lambda_p: Measure, pt_q: Self, mu_q: Measure) -> Self:
         """
         The plucker function takes in three parameters (lambda_p, pt_q, mu_) and returns a value of type Self.
-        
+
         :param lambda_p: The parameter "lambda_p" is of type Measure
         :type lambda_p: Measure
         :param pt_q: The parameter "pt_q" is of type "Self", which means it is an instance of the same class
@@ -71,7 +71,7 @@ class ProjectivePlane(Generic[Dual, Measure]):
     def incident(self, line_l: Dual) -> bool:
         """
         The function checks if a point is incident to a line.
-        
+
         :param line_l: The parameter "line_l" is of type "Dual"
         :type line_l: Dual
         :return: a boolean value. It returns True if the dot product of the self vector and the line

@@ -48,6 +48,7 @@ def cross_product(vector1, vector2):
         vector1[0] * vector2[1] - vector1[1] * vector2[0],
     ]
 
+
 # Write a parametric line equation.
 def parametric_line_equation(point1, point2):
     """
@@ -63,4 +64,6 @@ def parametric_line_equation(point1, point2):
     """
     if len(point1) != len(point2):
         raise ValueError("Points must be the same length")
-    return "x = " + str(point2[0]) + ", y = " + str(point2[1]) + ", z = " + str(point2[2])
+    return (
+        "x = " + str(point2[0]) + ", y = " + str(point2[1]) + ", z = " + str(point2[2])
+    )
